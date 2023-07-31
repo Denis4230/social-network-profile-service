@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 @RequiredArgsConstructor
 @Transactional
 @Service
@@ -17,6 +19,11 @@ public class ProfileServiceImpl implements ProfileService {
     @Override
     public Profile addProfile(Profile profile) {
         return profileRepository.save(profile);
+    }
+    @Override
+    public Optional<Profile> getProfile(Long profileId) {
+
+        return profileRepository.findById(profileId);
     }
 
     @Override
@@ -33,5 +40,10 @@ public class ProfileServiceImpl implements ProfileService {
     @Override
     public boolean existsByIdAndUserId(Long profileId, Long userId) {
         return profileRepository.existsByIdAndUserId(profileId, userId);
+    }
+    @Transactional(readOnly = true)
+    @Override
+    public boolean existsById(Long profileId) {
+        return profileRepository.existsById(profileId);
     }
 }
