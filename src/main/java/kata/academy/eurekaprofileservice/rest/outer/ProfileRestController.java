@@ -23,7 +23,7 @@ public class ProfileRestController {
     private final ProfileService profileService;
 
     @PostMapping
-    public Response<Profile> addProfile(@RequestBody ProfilePersistResponseDto dto,
+    public Response<Profile> addProfile(@RequestBody ProfileUpdateRequestDto dto,
                                         @RequestParam @Positive Long userId) {
         Profile profile = ProfileMapper.toEntity(dto);
         profile.setUserId(userId);

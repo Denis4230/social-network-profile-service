@@ -15,5 +15,4 @@ public interface ProfileService {
 
     boolean existsByIdAndUserId(Long profileId, Long userId);
 
-    public boolean existsById(Long profileId);
 }
