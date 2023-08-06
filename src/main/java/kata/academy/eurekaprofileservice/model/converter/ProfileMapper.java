@@ -1,6 +1,6 @@
 package kata.academy.eurekaprofileservice.model.converter;
 
-import kata.academy.eurekaprofileservice.model.dto.ProfilePersistRequestDto;
+import kata.academy.eurekaprofileservice.model.dto.ProfilePersistResponseDto;
 import kata.academy.eurekaprofileservice.model.dto.ProfileUpdateRequestDto;
 import kata.academy.eurekaprofileservice.model.entity.Profile;
 
@@ -9,7 +9,7 @@ public final class ProfileMapper {
     private ProfileMapper() {
     }
 
-    public static Profile toEntity(ProfilePersistRequestDto dto) {
+    public static Profile toEntity(ProfilePersistResponseDto dto) {
         Profile profile = new Profile();
         profile.setFirstName(dto.firstName());
         profile.setLastName(dto.lastName());

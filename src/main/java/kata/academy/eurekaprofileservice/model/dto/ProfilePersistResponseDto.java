@@ -6,7 +6,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 
-public record ProfilePersistRequestDto(
+public record ProfilePersistResponseDto(
         String firstName,
         String lastName,
         @DateTimeFormat(pattern = "yyyy-MM-dd")
